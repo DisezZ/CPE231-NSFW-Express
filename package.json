@@ -1,0 +1,26 @@
+{
+  "name": "cpe231-nsfw-express",
+  "version": "1.0.0",
+  "description": "KMUTT CPE231 Database Systems Course Project for NSFW Banking Systems Backend with ExpressJS Framework",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DisezZ/CPE231-NSFW-Express.git"
+  },
+  "author": "Lutfee Deemae",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DisezZ/CPE231-NSFW-Express/issues"
+  },
+  "homepage": "https://github.com/DisezZ/CPE231-NSFW-Express#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "mysql": "^2.18.1"
+  }
+}
