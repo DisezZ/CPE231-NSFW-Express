@@ -1,0 +1,18 @@
+{
+    "develop": {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "dream_home",
+        "dialect": "mysql",
+        "multipleStatements": "true"
+    },
+    "deploy": {
+        "host": "c8.cpe231.cpe.kmutt.ac.th",
+        "user": "cpe231_c8",
+        "password": "UL4o87tb6Px6Cj7LmPR5",
+        "database": "c8_nsfw",
+        "dialect": "mysql",
+        "multipleStatements": "true"
+    }
+}
