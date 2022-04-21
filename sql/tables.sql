@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `Bank` (
   `manager_id`                  INT(11)         NOT NULL UNIQUE,
   `bank_name`                   VARCHAR(64)     NOT NULL UNIQUE,
   `created`                     TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`bank_id`)
+  PRIMARY KEY (`bank_id`),
   FOREIGN KEY (`manager_id`) REFERENCES `Manager`(`manager_id`)
 );
 
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `Employee` (
 CREATE TABLE IF NOT EXISTS `Membership` (
   `membership_id`               INT(11)         NOT NULL AUTO_INCREMENT,
   `membership_name`             VARCHAR(64)     NOT NULL UNIQUE,
-  `loan_amount`                 MONEY           NOT NULL,
+  `loan_amount`                 DECIMAL(15,2)   NOT NULL,
   `loan_interest_rate`          TINYINT         NOT NULL,
   `deposit_interest_rate`       TINYINT         NOT NULL,
   PRIMARY KEY (`membership_id`)
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `Account` (
   `customer_id`                 INT(11)         NOT NULL,
   `branch_id`                   INT(11)         NOT NULL,
   `membership_id`               INT(11)         NOT NULL,
-  `balance`                     MONEY           NOT NULL,
+  `balance`                     DECIMAL(15,2)   NOT NULL,
   `created`                     TIMESTAMP       NOT NULL,
   PRIMARY KEY (`account_id`),
   FOREIGN KEY (`branch_id`) REFERENCES `Branch`(`branch_id`),
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `ATMTransaction` (
   `atm_transaction_id`          INT(11)         NOT NULL AUTO_INCREMENT,
   `from_account_id`             INT(11)         NOT NULL,
   `atm_id`                      INT(11)         NOT NULL,
-  `amount`                      MONEY           NOT NULL,
+  `amount`                      DECIMAL(15,2)   NOT NULL,
   `transaction_status_id`       INT(11)         NOT NULL,
   `payment_approved_by`         INT(11)         NULL,
   `created`                     TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `TransferTransaction` (
   `transfer_transaction_id`     INT(11)         NOT NULL AUTO_INCREMENT,
   `from_account_id`             INT(11)         NOT NULL,
   `to_account_id`               INT(11)         NOT NULL,
-  `amount`                      MONEY           NOT NULL,
+  `amount`                      DECIMAL(15,2)   NOT NULL,
   `transaction_status_id`       INT(11)         NOT NULL,
   `payment_approved_by`         INT(11)         NULL,
   `created`                     TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -132,8 +132,8 @@ CREATE TABLE IF NOT EXISTS `TransferTransaction` (
 CREATE TABLE IF NOT EXISTS `Loan` (
   `loan_id`                     INT(11)         NOT NULL AUTO_INCREMENT,
   `account_id`                  INT(11)         NOT NULL,
-  `initial_amount`              MONEY           NOT NULL,
-  `left_amount`                 MONEY           NOT NULL,
+  `initial_amount`              DECIMAL(15,2)   NOT NULL,
+  `left_amount`                 DECIMAL(15,2)   NOT NULL,
   `interest_rate`               TINYINT         NOT NULL,
   `transaction_status_id`       INT(11)         NOT NULL,
   `loan_approved_by`            INT(11)         NOT NULL,
@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `Loan` (
 CREATE TABLE IF NOT EXISTS `LoanPaying` (
   `loan_paying_id`              INT(11)         NOT NULL AUTO_INCREMENT,
   `loan_id`                     INT(11)         NOT NULL,
-  `amount`                      MONEY           NOT NULL,
+  `amount`                      DECIMAL(15,2)   NOT NULL,
   `transaction_status_id`       INT(11)         NOT NULL,
   `payment_approved_by`         INT(11)         NULL,
   `created`                     TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -162,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `LoanPaying` (
 CREATE TABLE IF NOT EXISTS `BillingTransaction` (
   `billing_transaction_id`      INT(11)         NOT NULL AUTO_INCREMENT,
   `from_account_id`             INT(11)         NOT NULL,
-  `amount`                      MONEY           NOT NULL,
+  `amount`                      DECIMAL(15,2)   NOT NULL,
   `transaction_status_id`       INT(11)         NOT NULL,
   `payment_approved_by`         INT(11)         NULL,
   `created`                     TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -176,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `TopupTransaction` (
   `topup_transaction_id`        INT(11)         NOT NULL AUTO_INCREMENT,
   `from_account_id`             INT(11)         NOT NULL,
   `mobile_number`               CHAR(10)        NOT NULL,
-  `amount`                      MONEY           NOT NULL,
+  `amount`                      DECIMAL(15,2)   NOT NULL,
   `transaction_status_id`       INT(11)         NOT NULL,
   `payment_approved_by`         INT(11)         NULL,
   `created`                     TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP,
