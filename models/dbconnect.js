@@ -2,7 +2,7 @@ const connection = require('./database')
 const config = require('../config/database.json').deploy
 
 
-const connectDatabase = async () => {
+const getConnection = async (callback) => {
     try {
         connection.connect()
         console.log(`MySQL Database connected to ${config.database}`)

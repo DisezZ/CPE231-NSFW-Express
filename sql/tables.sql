@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `Account` (
   `customer_id`                 INT(11)         NOT NULL,
   `branch_id`                   INT(11)         NOT NULL,
   `membership_id`               INT(11)         NOT NULL,
-  `balance`                     DECIMAL(15,2)   NOT NULL,
+  `balance`                     DECIMAL(15,2)   NOT NULL DEFAULT 0,
   `created`                     TIMESTAMP       NOT NULL,
   PRIMARY KEY (`account_id`),
   FOREIGN KEY (`branch_id`) REFERENCES `Branch`(`branch_id`),

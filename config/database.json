@@ -3,15 +3,24 @@
         "host": "localhost",
         "user": "root",
         "password": "",
-        "database": "dream_home",
+        "database": "nsfw",
         "dialect": "mysql",
         "multipleStatements": "true"
     },
     "deploy": {
         "host": "c8.cpe231.cpe.kmutt.ac.th",
-        "user": "cpe231_c8",
+        "user": "c8_nsfw",
         "password": "UL4o87tb6Px6Cj7LmPR5",
         "database": "c8_nsfw",
+        "dialect": "mysql",
+        "multipleStatements": "true"
+    },
+    "remotesql": {
+        "host": "remotemysql.com",
+        "user": "wUekYRcCMH",
+        "password": "IQ34XNL5cD",
+        "port": "3306",
+        "database": "wUekYRcCMH",
         "dialect": "mysql",
         "multipleStatements": "true"
     }
