@@ -1,7 +1,7 @@
 const express = require('express');
 const { DATE } = require('mysql/lib/protocol/constants/types');
 const loginRouter = express.Router();
-const database = require('../databaseConfig');
+const database = require('../pool');
 // check
 loginRouter.post('/userLogin',(req, res) =>{
     let username = req.body.username
