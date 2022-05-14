@@ -1,14 +1,11 @@
 const express = require('express')
-
 const router = express.Router()
 
-router.get('/', (req, res) => {
-    res.send('get users')
-})
+const customerController = require('../controllers/customer')
 
-router.post('/', (req, res) => {
-    res.send('post users')
-})
+router.get('/', customerController.view)
+
+router.post('/')
 
 router.get('/:user_id', (req, res) => {
     res.send('get user ' + req.params.user_id)

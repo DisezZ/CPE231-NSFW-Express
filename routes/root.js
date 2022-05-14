@@ -1,11 +1,12 @@
 const express = require('express')
 
-const membershipController = require('../controllers/membershipController')
-const users = require('./users')
+const customerController = require('../controllers/customer')
+
+const customerRouter = require('./users')
 
 const router = express.Router()
+router.get('/', (req, res) => res.json('hello'))
 
-router.get('/', membershipController.view)
-router.use('/users', users)
+router.use('/customers', customerRouter)
 
 module.exports = router
