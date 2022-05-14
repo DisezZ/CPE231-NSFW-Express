@@ -3,7 +3,7 @@
         "host": "localhost",
         "user": "root",
         "password": "",
-        "database": "nsfw",
+        "database": "cpe231Proj_local",
         "dialect": "mysql",
         "multipleStatements": "true"
     },
